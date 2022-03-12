@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Biome</title>
+        <title>LoadMore</title>
         <link rel="icon" href="images/biome.jpg" />
       </Head>
 
