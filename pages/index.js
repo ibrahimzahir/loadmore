@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import FreshProd from "../components/FreshProd";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
             <a className="text-base py-8 cursor-pointer text-black">See All</a>
           </Link>
         </div>
+        <FreshProd />
       </section>
       <section className="py-4">
         <h2 className="text-2xl font-extrabold py-8">Recommended Products</h2>
