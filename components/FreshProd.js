@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "./Product";
+import { useEffect, useState } from "react";
 
 const freshProds = [
   {
@@ -121,16 +122,31 @@ const freshProds = [
 ];
 
 function FreshProd() {
+  const [visible, setVisible] = useState(6);
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 6);
+  };
   return (
-    <div className="grid grid-cols-3">
-      {freshProds.map((freshprod) => (
-        <Product
-          key={freshprod.id}
-          src={freshprod.src}
-          name={freshprod.name}
-          category={freshprod.category}
-        />
-      ))}
+    <div>
+      <div className="grid grid-cols-3">
+        {freshProds?.slice(0, visible).map((freshprod) => (
+          <Product
+            key={freshprod.id}
+            src={freshprod.src}
+            name={freshprod.name}
+            category={freshprod.category}
+          />
+        ))}
+      </div>
+      <div className=" flex flex-col  pt-12	">
+        <button
+          className=" content-between bg-transparent hover:bg-green-800 text-green-800 font-semibold hover:text-white py-2 px-4 border border-green-800 hover:border-transparent rounded"
+          onClick={showMoreItems}
+        >
+          Load More
+        </button>
+      </div>
     </div>
   );
 }
