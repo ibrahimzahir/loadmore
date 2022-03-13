@@ -20,6 +20,7 @@ export default function Home() {
       </section>
       <section className="py-4">
         <h2 className="text-2xl font-extrabold py-8">Recommended Products</h2>
+        <FreshProd />
       </section>
     </main>
   );
